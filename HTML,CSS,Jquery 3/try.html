@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <style>
+        .active {
+            visibility: visible;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h4><span class=" active" data-class="desc">description</span> | <span data-class='rate'>Rating</span> </h4>
+        <div class="desc hide">
+            hello div 1
+        </div>
+        <div class="rate hide">
+            hello div 2
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('h4 span').click(function() {
+                $(this).addClass('active').siblings().removeClass('active')
+                $('.container .hide').hide();
+                $('.' + $(this).data('class')).fadeIn(100)
+            });
+        })
+    </script>
+</body>
+
+</html>
